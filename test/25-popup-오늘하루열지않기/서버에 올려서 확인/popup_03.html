@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 쿠키를 삭제하면 팝업을 다시 띄울 수 있음. -->
+    <style>
+        body {
+            margin: 0; padding: 0; border: 0;
+        }
+        ul, li{list-style: none; padding: 0;}
+        #popWrap{
+            position: absolute;
+            left: 0px; top: 0px; z-index:200;
+            /* visibility: hidden; */
+        }
+        #popup{
+            width: 300px;
+            height: 400px;
+            border: 1px solid #000;
+            text-align: center;
+        }
+        #popup > ul > li:first-child{
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+            background-color: #ccc;
+        }
+    </style>
+    <script>
+        /* expiresdays : 유효기간 */
+        /* setCookie : 쿠키생성(이름, 값, 유효기간 -> 3요소 필요) */
+        function setCookie(name, value, expiresdays){
+
+            var todayDate = new Date();
+
+            //.setDate()메서드는 현재 설정된 월의 시작 부분을 기준으로 Date객체의 날짜를 설정.
+            todayDate.setDate(todayDate.getDate() + expiresdays);
+
+            //document.cookie -> document와 연관된 쿠키를 읽고 쓰게함
+            document.cookie = name + "=" + escape(value) + "; path=/;expires=" + todayDate.toUTCString(); + ";"
+
+        }
+
+        //닫기버튼을 클릭하면 쿠키가 생성되면서 닫히도록
+
+        function closeWin(){
+            if(document.notice_form.chkbok.checked){
+                setCookie("popWrap","done",1); //1이면 1일
+            }
+            document.all['popWrap'].style.visibility = "hidden";
+        }
+
+
+    </script>
+</head>
+<body>
+    <div id="popWrap">
+        <div id="popup">
+            <ul>
+                <li>
+                    팝업내용영역
+                </li>
+                <li>
+                    <form action="#" name="notice_form">
+                        <p>
+                            <input type="checkbox" name="chkbok" value="checkbox"> 오늘 하루 이 창을 열지 않음 <br>
+                            <a href="javascript:closeWin();">[닫기]</a>
+                        </p>
+                    </form>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        cookiedata = document.cookie; //브라우저에서도 쿠키에 접근가능하도록
+        if(cookiedata.indexOf("popWrap=done")<0){
+            document.all['popWrap'].style.visibility = "visible";
+        } else {
+            document.all['popWrap'].style.visibility = "hidden";
+
+        }
+    </script>
+</body>
+</html>

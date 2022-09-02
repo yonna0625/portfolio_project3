@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Henny+Penny&display=swap');
+
+/* 마진 패딩 초기화 */
+* {
+    padding: 0;
+    margin: 0;
+}
+
+/* 페이지 기본 글꼴과 크기 설정 */
+body {
+    font-family: "맑은 고딕", "돋움"sans-serif;
+    font-size: 14px;
+    color: #333333;
+}
+
+img {
+    border: 0;
+}
+
+ul {
+    list-style-type: none;
+}
+
+/* <a> 태그 기본 설정 */
+a {
+    display: inline-block;
+    text-decoration: none;
+}
+
+a:link {
+    text-decoration: none;
+    color: #222222;
+}
+
+a:hover {
+    text-decoration: none;
+    /* color: #222222; */
+}
+
+a:visited {
+    text-decoration: none;
+    color: #222222;
+}
+
+a:active {
+    text-decoration: none;
+    color: #222222;
+}
+
+/* 상단 헤더 */
+#top {
+    position: relative;
+    width: 1000px;
+    height: 80px;
+    margin: 0 auto;
+}
+
+#top h1 {
+    position: absolute;
+    top: 20px;
+    left: 40px;
+    font-size: 20px;
+}
+
+#top h1 a {
+    font-family: 'Henny Penny', cursive;
+    color: #999999;
+}
+
+#top h2 {
+    position: absolute;
+    top: 27px;
+    left: 168px;
+    font-size: 16px;
+}
+
+#top h2 a {
+    color: #999999;
+}
+
+#top #top_menu {
+    float: right;
+    margin: 30px 40px 0 0;
+}
+
+#top #top_menu li {
+    display: inline;
+}
+
+#menu_bar {
+    height: 48px;
+    background-color: #ffffff;
+    font-size: 16px;
+}
+
+#menu_bar ul {
+    width: 1000px;
+    margin: 0 auto;
+    padding: 14px 0 0 40px;
+}
+
+#menu_bar li {
+    /* display: inline; */
+    float: left;
+    margin-left: 90px;
+    color: #333;
+}
+.main_menu {
+    position: relative;
+    height: 80px;
+}
+.sub_menu {
+    width: 600px;
+    height: 100px;
+    background-color: #f3f3f3;
+    position: relative;
+    z-index: 9999;
+    top: -46px;
+    /* display: none; */
+}
+.sub_menu li {
+    clear: left;
+}
+.sub_menu li a {
+    text-align: center;
+    color: #333333;
+}
+
+.sub_menu li.second {
+    position: relative;
+    left: 200px;
+    top: -65px;
+}
+.sub_menu li.third {
+    position: relative;
+    left: 410px;
+    top: -106px;
+}
+.sub_menu li.fourth {
+    position: relative;
+    left: 600px;
+    top: -170px;
+}
+#menu_bar a:link {
+    color: #333;
+    padding: 0 30px;
+}
+
+
+#menu_bar a:visited {
+    color: #333;
+}
+
+#menu_bar a:active {
+    color: #333;
+}
+/* 메인 이미지 */
+#main_img_bar {
+    height: 250px;
+    text-align: center;
+    width: 100%;
+    background-color: #efefef;
+    background: url(../img/main_product_visual02.jpg);
+    background-size: cover;
+    position: relative;
+}
+
+#main_img_bar img {
+    margin-top: 0px;
+}
+
+/* 하단 푸터 */
+footer {
+    height: 70px;
+    background-color: #efefef;
+    margin-top: 50px;
+}
+
+#footer_content {
+    position: relative;
+    width: 1000px;
+    margin: 0 auto;
+    color: #999999;
+    font-size: 14px;
+}
+
+#footer_content a {
+    color: #999999;
+    font-size: 12px;
+}
+
+#footer_logo {
+    position: absolute;
+    top: 20px;
+    left: 40px;
+    background-color: #efefef;
+}
+
+#footer_logo img {
+    width: 150px;
+}
+
+#footer_logo span {
+    font-family: 'Henny Penny', cursive;
+    color: #888888;
+    font-weight: bold;
+}
+
+#download {
+    position: absolute;
+    top: 15px;
+    left: 600px;
+}
+
+#author {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+}
